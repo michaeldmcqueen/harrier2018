@@ -1,0 +1,327 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+.container, .text-container {
+	margin: 0 auto;
+	position: relative;
+	padding: 0 20px;
+}
+
+.text-container {
+	max-width: 750px;
+}
+
+.container {
+	max-width: 1140px;
+}
+
+header {
+	width: 100%;
+	.container {
+		line-height: 0;
+	}
+	a {
+		text-decoration: none;
+		z-index: 1;
+		position: relative;
+		display: block;		
+		span {
+			display: block;
+			height: 100%;
+		}
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+// Conten 
+#content-container {
+	background: #efefef;
+	background: #efefef url('/images/cardboard-flat.png') repeat;
+	@media #{$mid-point} {
+		position: relative;
+		left: 7rem;
+		width: calc(100% - 7rem);
+ }
+}
+//Site Sidebar 
+.site-sidebar {
+	background: $dgreen;
+	text-align: center;
+	padding: 8px 0 4px;
+	@media #{$mid-point} {
+		padding: 0;
+		border-right: $border-size-full solid #fff;
+		position: fixed;
+		left: $border-size-full;
+		height: 100%;
+		top: 0;
+		width: 7rem;
+	}
+	.company-name {
+		width: 30px;
+		display: flex;
+		align-items: center;
+		margin: 0 auto;
+		@media #{$mid-point} {
+			height: 100vh;
+			width: 50px;
+		}
+		a {
+			display: block;
+			width: 100%;
+		}
+	}
+}
+
+.split {
+	@media #{$desktop} {
+		display: flex;
+		min-height: 89vh;
+
+	}
+	section {
+		width: 100%;
+		@media #{$desktop} {
+			width: 50%;
+		}
+	}
+}
+
+#intro {
+	padding: 1.5rem 0;
+	@media #{$desktop} {
+		padding: 2rem;
+		border-right: $border-size-half solid #fff;
+	}
+	h1 {
+		font-size: 2rem;
+		margin-bottom: 1.5rem;
+		font-weight: 700;
+	}
+	p {
+		font-family: $accent-font;
+	}
+}
+#intro-image {
+	background-image: url(../images/harrier-bg.jpg);
+	background-size: cover;
+	// background-color: $lgreen;
+	// background-blend-mode: multiply;
+	background-position: 50% 50%;
+	position: relative;
+	min-height: 70vh;
+	@media #{$desktop} {
+		position: fixed;
+		right: 12px;
+		top: 12px;
+		z-index: 1;
+		height: 100%;
+		width: calc(50% - 3rem);
+		border-left: $border-size-full solid #fff;
+	}
+	img {
+		height: 85%;
+		display: block;
+		margin: auto;
+		padding: 2rem;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+}
+#about-image {
+	background-image: url(http://d1qmdf3vop2l07.cloudfront.net/important-hippopotamus1.cloudvent.net/compressed/28b10d41921a31c7675b4001f21c1d8a.jpg);
+	background-size: cover;
+	background-color: $lgreen;
+	background-blend-mode: multiply;
+	background-position: 50% 50%;
+	position: relative;
+	min-height: 70vh;
+	@media #{$desktop} {
+		position: fixed;
+		right: $border-size-full;
+		top: $border-size-full;
+		z-index: 1;
+		height: 100%;
+		width: calc(50% - 3rem);
+		border-left: $border-size-full solid #fff;
+	}
+	img {
+		height: 85%;
+		display: block;
+		margin: auto;
+		padding: 2rem;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+}
+
+
+// Work LIst
+.work-list {
+	padding: 6px;
+	@media #{$desktop} {
+		display: flex;
+		flex-wrap: wrap;
+	
+	}
+	.work-list--item {
+		width: 100%;
+		padding: 6px;
+		@media #{$desktop} {
+			width: 50%;
+			padding: 6px;
+		}
+		@media #{$lg-desktop} {
+			width: 33.3%;
+		}
+	}
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+.work-list--item-details {
+	background: #fff;
+	padding: 1rem;
+	h3 {
+		font-weight: 700;
+		color: $dgreen;
+		padding-bottom: 0.1rem;
+	}
+	p {
+		font-family: $accent-font;
+		font-size: 0.75rem;
+	}
+	h3, p {
+		margin: 0;
+		
+	}
+}
+
+
+.project-detail {
+	padding: $border-size-full;
+	margin: 0 auto;
+max-width: 1000px;
+padding: 2rem 1rem;
+h1 {
+	font-weight: 700;
+	font-size: 2.5rem;
+	padding-bottom: 1rem;
+}
+}
+blockquote {
+	padding: 18px 25px;
+	margin: 0;
+	quotes: "\201C""\201D""\2018""\2019";
+	font-style: italic;
+
+	cite {
+		display: block;
+		font-weight: bold;
+		margin: 10px 0 0 0;
+	}
+
+	p {
+		display: inline;
+	}
+}
+
+blockquote:before {
+	color: #ccc;
+	content: open-quote;
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+
+.center-text {
+	text-align: center;
+}
+
+.learn-more {
+	position: absolute;
+	left: 0;
+	bottom: 30px;
+	text-align: center;
+	font-size: 1.4em;
+	width: 100%;
+
+	a {
+		text-decoration: none;
+		color: #fff;
+		opacity: .9;
+
+		&:hover {
+			opacity: 1;
+		}
+	}
+	.arrow {
+		font-size: .6em;
+	}
+}
+.lists h6 {
+	padding-bottom: 1em;
+	font-size: 1.2em;
+}
+
+.lists ul {
+	font-family: $accent-font;
+
+}
+.lists span {
+	display: block;
+}
+.lists .album {
+	display: inline-block;
+	font-weight: 700;
+	border-bottom: 1px dotted;
+}
+.lists li {
+	padding-bottom: .5em;
+}
+
+.editor-link {
+ 	display: none;
+	margin-top: 0;
+	padding-top: 30px;
+	.btn {
+		border: 0;
+		border-radius: 2px;
+		width: 100%;
+		max-width: 500px;
+		box-sizing: border-box;
+		font-size: 2rem;
+		text-decoration: none;
+		padding: 10px 15px;
+		margin: 0;
+		font-size: 18px;
+		cursor: pointer;
+		background-color: #f7e064;
+		color: #333;
+		box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+		&:hover {
+			background-color: #f4d525;
+			color: #333;
+		}
+	}
+
+}
+
+.cms-editor-active .editor-link {
+	display: block;
+}

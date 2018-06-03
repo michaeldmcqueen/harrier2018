@@ -1,0 +1,29 @@
+nav {
+	font-size: 0.85rem;
+	width: 100%;
+	position: relative;
+	background: $lgreen;
+	display: block;
+	font-weight: 700;
+	text-align: center;
+	@media #{$mid-point} {
+		text-align: left;
+		font-size: 1rem;
+		padding: 0 20px;
+		border-bottom: $border-size-full solid #fff;
+	}
+	a {
+		margin: 0 3px;
+		padding: 15px 6px;
+		border: 0;
+		color: $dgreen;
+		display: inline-block;
+		@media #{$mid-point} {
+			padding: 18px 10px;
+		}
+	}
+	a.active {
+		border-bottom: 1px solid $dgreen;
+	}
+
+}

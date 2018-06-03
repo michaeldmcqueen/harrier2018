@@ -1,0 +1,33 @@
+.hero {
+	color: #ffffff;
+	text-align: center;
+	height: 100vh;
+	min-height: 550px;
+	background-color: #333;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	p {
+		color: #fff;
+	}
+
+	.inner-hero {
+		display: flex;
+		align-items: center;
+		height: 100%;
+	}
+
+	.hero-text-container {
+		width: 600px;
+		text-align: left;
+
+		h1, h2, p, .button {
+			text-shadow: 1px 1px 1px rgba(0,0,0,.8);
+		}
+	}
+
+	.hero-text-right {
+		position: absolute;
+		right: 0;
+	}
+}

@@ -1,0 +1,9 @@
+{% for project in site.projects %}
+	<li class="blog-project">
+		<h2><a href="{% include relative-src.html src=project.url %}">{{ project.title }}</a></h2>
+		<div class="project-content">
+			{{ project.excerpt }}
+			<div class="button"><a href="{% include relative-src.html src=project.url %}">Read More</a></div>
+		</div>
+	</li>
+{% endfor %}

@@ -1,0 +1,24 @@
+---
+title: Work
+description: Keep up with the latest news.
+image: https://source.unsplash.com/MqJX_8EaStM/2000x1322?a=.png
+---
+
+
+
+<section>
+	<p class="editor-link"><a href="cloudcannon:collections/_posts" class="btn"><strong>&#9998;</strong> Add Post</a></p>
+	<div class="work-list">	
+		{% for project in site.projects %}
+			<div class="work-list--item">
+				<a href="{% include relative-src.html src=project.url %}">
+					<div class="work-list--item-details">
+						<h3>{{ project.title }}</h3>
+						<p>{{ project.categories }}</p>
+					</div>
+					<img src="{{ project.image}}" alt="{{ project.title }}"/>
+				</a>	
+			</div>
+		{% endfor %}
+	</div>
+</section>
